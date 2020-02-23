@@ -1,10 +1,15 @@
 SVG.on(document, 'DOMContentLoaded', function() {
 
   const map = [
-    [0, 1, 0, 1, 0, 1, 0, 1],
-    [2, 0, 2, 0, 2, 0, 2, 0],
-    [3, 3, 0, 0, 3, 3, 0, 0],
-    [4, 0, 4, 4, 0, 4, 4, 0],
+    [5 ,0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0],
+    [1 ,1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0],
+    [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+    [0 ,2, 0, 0, 0, 0, 2, 2, 0, 0, 2, 0],
+    [0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 2],
+    [0 ,3, 0, 3, 0, 0, 3, 0, 3, 0, 0, 3],
+    [0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 3, 0],
+    [4, 0, 4, 0, 0, 4, 0, 0, 0, 4, 0, 0],
+    [0, 4, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0],
   ]
 
   const config = {
@@ -16,11 +21,12 @@ SVG.on(document, 'DOMContentLoaded', function() {
       size: { w: 900, h: 400 }
     },
     colors: [
-      "#ffffff",
-      "#345900",
-      "#234432",
-      "#098765",
-      "#098765"
+      "#000",
+      "#ff0000",
+      "#00ff00",
+      "#0000ff",
+      "#ff00ff",
+      "#ffff00",
     ]
   }
 
@@ -34,7 +40,7 @@ SVG.on(document, 'DOMContentLoaded', function() {
       config.canvas.size.w,
       config.canvas.size.h
     )
-    .fill("#fff")
+    .fill("#000")
     .stroke({ width: 1, color: "#000"})
 
   draw.rect(
@@ -45,8 +51,8 @@ SVG.on(document, 'DOMContentLoaded', function() {
       x: config.visible.offset.x,
       y: config.visible.offset.y
     })
-    .fill("#fff")
-    .stroke({ width: 1, color: "#ff0000"})
+    .fill("#000")
+    .stroke({ width: 1, color: "#000"})
 
     // draw the squares
     const sh =  config.visible.size.h / map.length
