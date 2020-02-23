@@ -13,3 +13,7 @@ https://www.youtube.com/watch?v=gy2kyRrXm2g
 ## State
 
 Gridscore is in early development and still non-functional.
+
+## Dependencies
+
+https://svgjs.com/docs/3.0/
