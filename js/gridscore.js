@@ -1,16 +1,31 @@
 SVG.on(document, 'DOMContentLoaded', function() {
 
-  const map = [
-    [5 ,0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0],
-    [1 ,1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0],
-    [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0 ,2, 0, 0, 0, 0, 2, 2, 0, 0, 2, 0],
-    [0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 2],
-    [0 ,3, 0, 3, 0, 0, 3, 0, 3, 0, 0, 3],
-    [0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 3, 0],
-    [4, 0, 4, 0, 0, 4, 0, 0, 0, 4, 0, 0],
-    [0, 4, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0],
-  ]
+  const file =
+`
+  1.1.1.1.1.1.
+  22..2..2.22.
+  ..2..2......
+  .3....33..3.
+  ...33...3..3
+  .4.4..4.4..4
+  ....4..4..4.
+  5.5..5...5..
+  .5..5..5..5.
+`
+
+  const lines = file.split(/\n/)
+  const map = []
+  for (let i = 0; i < lines.length; i++) {
+    let str = lines[i].replace(/ /g,'')
+    str = str.replace(/\./g,'0')
+    if (str.length > 0) {
+      const arr = []
+      for (j = 0; j < str.length; j++) {
+        arr.push(str.charAt(j))
+      }
+      map.push(arr)
+    }
+  }
 
   const config = {
     canvas: {
