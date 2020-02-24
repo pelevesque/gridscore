@@ -1,23 +1,21 @@
 SVG.on(document, 'DOMContentLoaded', function() {
 
-  const file =
-`
-  1.1.1.1.1.1.
-  22..2..2.22.
-  ..2..2......
-  .3....33..3.
-  ...33...3..3
-  .4.4..4.4..4
-  ....4..4..4.
-  5.5..5...5..
-  .5..5..5..5.
+  const file = `
+    1.1.1.1.1.1.
+    22..2..2.22.
+    ..2..2......
+    .3....33..3.
+    ...33...3..3
+    .4.4..4.4..4
+    ....4..4..4.
+    5.5..5...5..
+    .5..5..5..5.
 `
 
   const lines = file.split(/\n/)
   const map = []
   for (let i = 0; i < lines.length; i++) {
-    let str = lines[i].replace(/ /g,'')
-    str = str.replace(/\./g,'0')
+    const str = lines[i].replace(/ /g,'')
     if (str.length > 0) {
       const arr = []
       for (j = 0; j < str.length; j++) {
@@ -35,14 +33,14 @@ SVG.on(document, 'DOMContentLoaded', function() {
       offset: { x: 50, y: 50 },
       size: { w: 900, h: 400 }
     },
-    colors: [
-      "#000",
-      "#ff0000",
-      "#00ff00",
-      "#0000ff",
-      "#ff00ff",
-      "#ffff00",
-    ]
+    colors: {
+      ".": "#000",
+      "1": "#ff0000",
+      "2": "#00ff00",
+      "3": "#0000ff",
+      "4": "#ff00ff",
+      "5": "#ffff00",
+    }
   }
 
   const draw = SVG().addTo('#svg').size(
@@ -80,6 +78,7 @@ SVG.on(document, 'DOMContentLoaded', function() {
             y: config.visible.offset.y + (i * sh)
           })
           .fill(config.colors[map[i][j]])
+          .stroke({ width: 1, color: "#000"})
       }
    }
 
